@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="InformacoesMedicas3.css">
+    <title>InformaçõesMédicas</title>
+</head>
+<body>
+    <nav class="navBar">
+      <div class="linksBack">
+        <ul class="unListTitleLinks">
+          <li>
+            <h1 id="titleNavBar">SuaSaúdeMeuDinheiro</h1>
+          </li>
+          <li>
+            <a href="DadosPessoais1.html" id="Back">
+                <img src="assets/homeIcon.png" id="imgback" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="contato2.html" id="Back" style="text-decoration: none; color: whitesmoke;">
+                <img src="assets/arrow_back_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" id="imgback" alt="" style="color: white;">
+            </a> 
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div style=" display: flex; flex-direction: column; box-sizing: border-box; margin: 0 auto; justify-content: center; align-items: center;">
+         <h1 id="title">Cadastro de pessoas</h1>
+        <section style="padding-bottom: 30px;">
+        </section>
+        <div class="container">
+            <form action="" class="containerForm">
+                <h1 style="display: flex; cursor: default; font-size: 27px; justify-content: center; align-items: center; padding-top: 0px; padding-bottom: 25px; border-bottom: 2px solid black; ">3.Informações Médicas</h1>
+                <section style="display: flex; flex-direction: column; gap: 30px; padding-top: 30px;">
+                    <section class="SectionFlexMain" style="display: flex; flex-direction: column; flex: 4; gap: 30px;">
+                        <section>   
+                                <label for="">Número do cartão SUS (opcional): </label><input type="number" maxlength="14" required> 
+                        </section>
+                        <section>
+                                <label for="" required> Convênio médico: </label><select>
+                                    <option value="">Plano de saúde de atendimento ambulatorial.</option>
+                                    <option value="">Plano de saúde hospitalar: sem cobertura obstétrica.</option>
+                                    <option value="">Plano de saúde hospitalar:  com cobertura obstétrica.</option>
+                                    <option value="">Plano de saúde odontológico.</option>
+                                    <option value="">Plano de saúde referência.</option>
+                                </select>
+                        </section>
+                    </section>        
+                        <section style="padding: px;">
+                            <label for="">Número da carteirinha do convênio: </label><input type="number" maxlength="25">
+                        </section>
+                        <section style="display: flex; border-top: 2px solid black; border-bottom: 2px solid black; gap: 20px; flex-wrap: wrap;">
+                            <section style="padding-bottom: 16px; display: flex; flex: 2; flex-direction: column; width: 45%;">
+                                <label for="" style="padding-bottom: 5px;">Observações médicas iniciais </label>
+                                <textarea name="" id="" maxlength="" style="height: 160px;"></textarea>
+                            </section>
+                            <div style="border-left: 2px solid black; padding-left: 21px; padding-bottom: 16px; display: flex; flex: 2; flex-direction: column; width: 45%;">       
+                                <label for="" style="padding-bottom: 5px;">Médico responsável</label>
+                                <select size="4" style="width: 100%;">
+                                    <option value="">Dr. Sugiro</option>
+                                    <option value="">Dr. Kimimame</option>
+                                    <option value="">Dr. Ouu</option>
+                                    <option value="">Dr. Kisente</option>
+                                </select>
+                            </div>
+                        </section>
+                    <section class="buttonPro">
+                    <a href="Documentos4.html" id="buttonPro" style="cursor: pointer; text-decoration: none; color: black;  font-size: 1.5rem; padding: 5px; border: 2px solid black;     background-color: rgb(0, 248, 120);">Prosseguir</a>
+                    </section>
+                </section>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

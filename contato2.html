@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adicionando Javascript -->
+    <script>
+    
+    function limpa_formulário_cep() {
+            //Limpa valores do formulário de cep.
+            document.getElementById('rua').value=("");
+            document.getElementById('bairro').value=("");
+            document.getElementById('cidade').value=("");
+            document.getElementById('uf').value=("");
+            document.getElementById('ibge').value=("");
+    }
+
+    function meu_callback(conteudo) {
+        if (!("erro" in conteudo)) {
+            //Atualiza os campos com os valores.
+            document.getElementById('rua').value=(conteudo.logradouro);
+            document.getElementById('bairro').value=(conteudo.bairro);
+            document.getElementById('cidade').value=(conteudo.localidade);
+            document.getElementById('uf').value=(conteudo.uf);
+            document.getElementById('ibge').value=(conteudo.ibge);
+        } //end if.
+        else {
+            //CEP não Encontrado.
+            limpa_formulário_cep();
+            alert("CEP não encontrado.");
+        }
+    }
+        
+    function pesquisacep(valor) {
+
+        //Nova variável "cep" somente com dígitos.
+        var cep = valor.replace(/\D/g, '');
+
+        //Verifica se campo cep possui valor informado.
+        if (cep != "") {
+
+            //Expressão regular para validar o CEP.
+            var validacep = /^[0-9]{8}$/;
+
+            //Valida o formato do CEP.
+            if(validacep.test(cep)) {
+
+                //Preenche os campos com "..." enquanto consulta webservice.
+                document.getElementById('rua').value="...";
+                document.getElementById('bairro').value="...";
+                document.getElementById('cidade').value="...";
+                document.getElementById('uf').value="...";
+                document.getElementById('ibge').value="...";
+
+                //Cria um elemento javascript.
+                var script = document.createElement('script');
+
+                //Sincroniza com o callback.
+                script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+
+                //Insere script no documento e carrega o conteúdo.
+                document.body.appendChild(script);
+
+            } //end if.
+            else {
+                //cep é inválido.
+                limpa_formulário_cep();
+                alert("Formato de CEP inválido.");
+            }
+        } //end if.
+        else {
+            //cep sem valor, limpa formulário.
+            limpa_formulário_cep();
+        }
+    };
+
+    </script>
+    <link rel="stylesheet" href="contato2.css">
+    <title>contato</title>
+</head>
+<body>
+    <nav class="navBar">
+      <div class="linksBack">
+        <ul class="unListTitleLinks">
+          <li>
+            <h1 id="titleNavBar">SuaSaúdeMeuDinheiro</h1>
+          </li>
+          <li>
+            <a href="DadosPessoais1.html" id="Back">
+                <img src="assets/homeIcon.png" id="imgback" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div style=" display: flex; flex-direction: column; box-sizing: border-box; margin: 0 auto; justify-content: center; align-items: center;">
+         <h1 id="title">Cadastro de pessoas</h1>
+        <section style="padding-bottom: 30px;">
+        </section>
+        <div class="container">
+            <form method="get" action="" class="containerForm">
+                <h1 style="display: flex; cursor: default; font-size: 27px; justify-content: center; align-items: center; padding-top: 0px; padding-bottom: 25px; border-bottom: 2px solid black; ">2.Contato</h1>
+                <section style="display: flex; flex-direction: column; gap: 30px; padding-top: 30px;">
+                    <section class="SectionFlexMain" style="display: flex; flex-direction: column; flex: 4; gap: 30px;">
+                        <section>   
+                                <label for=""> Telefone celular: </label><input type="text" pattern="[0-9]{9}" value="+55" maxlength="16" placeholder="Ex: 11756214753" required> 
+                        </section>
+                        <section>   
+                            <label for=""> Telefone fixo:  </label><input type="number" value="44" maxlength="18"  placeholder="opcional"> 
+                        </section>
+                        <section style="border-bottom: 2px solid black; padding-bottom: 35px;">   
+                                <label for=""> E-mail: </label><input type="text" maxlength="200" > 
+                        </section>
+                        <label for="">Cep:
+                        <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+                        onblur="pesquisacep(this.value);"/></label>
+                        <label>Rua:
+                        <input name="rua" type="text" id="rua" size="60" /></label>
+                        <label>Bairro:
+                        <input name="bairro" type="text" id="bairro" size="40" /></label>
+                        <label>Cidade:
+                        <input name="cidade" type="text" id="cidade" size="40" /></label>
+                        <label>Estado:
+                        <input name="uf" type="text" id="uf" size="2" /></label>
+                        <label>IBGE:
+                        <input name="ibge" type="text" id="ibge" size="8" /></label>
+        
+                    <section class="buttonPro">
+                    <a href="InformaçõesMédicas3.html" id="buttonPro" style="cursor: pointer; text-decoration: none; color: black;  font-size: 1.5rem; padding: 5px; border: 2px solid black;     background-color: rgb(0, 248, 120);">Prosseguir</a>
+                    </section>
+                </section>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
