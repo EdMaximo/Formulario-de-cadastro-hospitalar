@@ -56,7 +56,6 @@ body {
   left: 0;
   right: 0;
   top: 0;
-  padding: 0px !important;
   height: 6%;
   min-height: 50px;
   width: 100% !important;
@@ -66,15 +65,16 @@ body {
 }
 
 .unListTitleLinks {
+  width: 100% !important;
   display: flex;
-  gap: 20px;
+  gap: 10px;
   align-items: center;
   list-style: none;
 }
 
 #titleNavBar {
   font-family: fantasy;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   text-align: center;
   color: white;
   cursor: default;
@@ -91,7 +91,6 @@ body {
 
 .linksBack {
     box-sizing: border-box;
-    gap: 0px;
     left: 0;
     right: 0;
     top: 0;
