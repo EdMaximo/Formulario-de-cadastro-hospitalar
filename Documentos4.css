@@ -23,7 +23,7 @@ body {
     justify-content: center;
     box-sizing: border-box;
     background: #000000;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 1%, rgba(110, 232, 39, 1) 100%);
+    background: linear-gradient(180deg, rgb(11, 212, 152) 1%, rgb(41, 108, 2) 100%);
 }
 
 .navBar {
@@ -41,15 +41,8 @@ body {
   min-height: 50px;
   width: 100% !important;
   gap: 1rem;
-
-   background:
-   radial-gradient(right,
-     125% 125% at 50% 10%,
-     #000000 10%,
-     #00ff08 100%
-   );
-  backdrop-filter: blur(12px);
-  border-bottom: 2px solid rgba(0, 255, 68, 0.924);
+  background-color: #3c523e;
+  border-bottom: 2px solid rgba(0, 255, 119, 0.924);
 }
 
 .unListTitleLinks {
@@ -122,9 +115,9 @@ body {
     justify-content: center;
     margin: 20px;
     width: 100%;
-    max-width: 800px;
+    max-width: 830px;
     background-color: whitesmoke;
-    border: 3px solid rgb(102, 98, 94);
+    border: 3px solid rgb(143, 73, 4);
     border-radius: 12px;
 }
 
@@ -145,10 +138,9 @@ body {
 
 .buttonPro {
     display: flex;
-    padding: 23px;
+    gap: 20px;
+    flex-wrap: wrap;
     justify-content: right;
-    align-items: right;
-    text-align: right;
 }
 
 #buttonPro {
@@ -162,5 +154,10 @@ body {
 
 a:hover{
     transform: scale(1.1);
-    transition: 0.2s normal;
+    transition: 0.2s ease;
+}
+
+#saveButton:hover{
+    transform: scale(1.1);
+    transition: 0.2s ease;
 }

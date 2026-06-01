@@ -83,11 +83,14 @@
       <div class="linksBack">
         <ul class="unListTitleLinks">
           <li>
+            <img src="assets/Logo.png" id="" alt="" style="width: 2.5rem; border-radius: 100%; border: 2px solid rgb(0, 0, 0);">
+          </li>
+          <li>
             <h1 id="titleNavBar">SuaSaúdeMeuDinheiro</h1>
           </li>
           <li>
             <a href="index.html" id="Back">
-                <img src="assets/homeIcon.png" id="imgback" alt="">
+             <img src="assets/arrow_back_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" id="imgback" alt="">
             </a>
           </li>
         </ul>
@@ -98,35 +101,36 @@
         <section style="padding-bottom: 30px;">
         </section>
         <div class="container">
-            <form method="get" action="" class="containerForm">
+            <form method="get" action="" class="containerForm" style="border: 2px solid black; padding: 10px;">
                 <h1 style="display: flex; cursor: default; font-size: 27px; justify-content: center; align-items: center; padding-top: 0px; padding-bottom: 25px; border-bottom: 2px solid black; ">2.Contato</h1>
                 <section style="display: flex; flex-direction: column; gap: 30px; padding-top: 30px;">
                     <section class="SectionFlexMain" style="display: flex; flex-direction: column; flex: 4; gap: 30px;">
                         <section>   
-                                <label for=""> Telefone celular: </label><input type="text" pattern="[0-9]{9}" value="+55" maxlength="16" placeholder="Ex: 11756214753" required> 
+                                <label for=""> Telefone celular: </label><input type="text" pattern="[0-9-+]{17}" maxlength="17" placeholder="+55 11 99999-9999" required> 
                         </section>
                         <section>   
-                            <label for=""> Telefone fixo:  </label><input type="number" value="44" maxlength="18"  placeholder="opcional"> 
+                            <label for=""> Telefone fixo (opcional):  </label><input type="text" pattern="[0-9-+]{16}" placeholder="+55 11 3333-4444" maxlength="16"> 
                         </section>
                         <section style="border-bottom: 2px solid black; padding-bottom: 35px;">   
-                                <label for=""> E-mail: </label><input type="text" maxlength="200" > 
+                                <label for=""> E-mail: </label><input type="email" maxlength="200" required> 
                         </section>
                         <label for="">Cep:
-                        <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+                        <input name="cep" required type="text" id="cep" value="" size="10" maxlength="9"
                         onblur="pesquisacep(this.value);"/></label>
                         <label>Rua:
-                        <input name="rua" type="text" id="rua" size="60" /></label>
+                        <input name="rua" required type="text" id="rua" size="60" /></label>
                         <label>Bairro:
-                        <input name="bairro" type="text" id="bairro" size="40" /></label>
+                        <input name="bairro" required type="text" id="bairro" size="40" /></label>
                         <label>Cidade:
-                        <input name="cidade" type="text" id="cidade" size="40" /></label>
+                        <input name="cidade" required type="text" id="cidade" size="40" /></label>
                         <label>Estado:
-                        <input name="uf" type="text" id="uf" size="2" /></label>
+                        <input name="uf" required type="text" id="uf" size="2" /></label>
                         <label>IBGE:
-                        <input name="ibge" type="text" id="ibge" size="8" /></label>
+                        <input name="ibge" required type="text" id="ibge" size="8" /></label>
         
                     <section class="buttonPro">
-                    <a href="InformaçõesMédicas3.html" id="buttonPro" style="cursor: pointer; text-decoration: none; color: black;  font-size: 1.5rem; padding: 5px; border: 2px solid black;     background-color: rgb(0, 248, 120);">Prosseguir</a>
+                        <button type="submit" id="saveButton" style="cursor: pointer; text-decoration: none; color: black;  font-size: 1.5rem; padding: 5px; border: 2px solid black; background-color: rgb(0, 248, 120); border-radius: 12px;">Salvar</button>
+                        <a href="InformaçõesMédicas3.html" id="buttonPro" style="cursor: pointer; text-decoration: none; color: black;  font-size: 1.5rem; padding: 5px; border: 2px solid black; background-color: rgb(0, 248, 120); border-radius: 12px;">Prosseguir</a>
                     </section>
                 </section>
             </form>
