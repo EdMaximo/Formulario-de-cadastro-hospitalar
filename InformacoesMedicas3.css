@@ -38,8 +38,7 @@ body {
     margin: 0;
     min-height: 100vh;
     width: 100%;
-    background: #000000;
-    background: linear-gradient(180deg, rgb(11, 212, 152) 1%, rgb(41, 108, 2) 100%);
+    background: linear-gradient(135deg, #E8F5F1 0%, #D4EBE5 100%); 
     display: flex;
     align-items: center;    
     justify-content: center;
@@ -60,8 +59,8 @@ body {
   min-height: 50px;
   width: 100% !important;
   gap: 1rem;
-  background-color: #3c523e;
-  border-bottom: 2px solid rgba(0, 255, 119, 0.924);
+  background: linear-gradient(90deg, #004643 0%, #00736C 100%);  
+  border-bottom: 2px solid rgba(0, 255, 200, 0.924);
 }
 
 .unListTitleLinks {
@@ -74,17 +73,16 @@ body {
 
 #titleNavBar {
   font-family: fantasy;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-align: center;
   color: white;
   cursor: default;
 }
 
 #title {
-    font-family: fantasy;
-    font-size: 5vh;
-    color: white;
-    border-bottom: 2px solid snow;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.9rem;
+    color: black;
     text-align: center;
     cursor: default;
 }
@@ -134,8 +132,8 @@ body {
     margin: 20px;
     width: 95%;
     max-width: 100%;
-    background-color: whitesmoke;
-    border: 3px solid rgb(143, 73, 4);
+    background-color: #FFFFFF;
+    border: 3px solid #CCCCCC;
     border-radius: 12px;
 }
 
@@ -147,23 +145,17 @@ body {
     justify-content: right;
 }
 
-#buttonPro {
-    background-color:
-    radial-gradient(right,
-     125% 125% at 50% 10%,
-     #000000 40%,
-     #33616f 100%
-   );
-}
 
-a:hover{
+#buttonPro:hover{
     transform: scale(1.1);
-    transition: 0.2s normal;
+    transition: 0.2s ease;
+    background-color: #7afff2c0 !important;
 }
 
 #saveButton:hover{
     transform: scale(1.1);
     transition: 0.2s ease;
+    background-color: #7afff2c0 !important;
 }
 
 
