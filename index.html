@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="DadosPessoais1.css">
+    <script defer src="script/script.js"></script>
     <title>Dados Pessoais</title>
 </head>
 <body>
@@ -20,47 +21,55 @@
       </div>
     </nav>
     <div style=" display: flex; flex-direction: column; box-sizing: border-box; margin: 0 auto; justify-content: center; align-items: center;">
-        <div class="container" style="display: flex; flex-direction: column;">
-            <h1 id="title">Cadastro</h1>
+        <div class="container" style="display: flex; flex-direction: column; gap: 10px;">
+            <h1 id="title">Cadastro de Pacientes</h1>
             <form action="" class="containerForm" style="border: 2px solid black; padding: 15px;">
-                <h1 style="display: flex; cursor: default; font-size: 27px; justify-content: center; align-items: center; padding-top: 0px; padding-bottom: 25px; border-bottom: 2px solid black; ">1.Dados Pessoais</h1>
+                <h1 style="display: flex; cursor: default; font-size: 27px; justify-content: center; align-items: center; padding-top: 0px;">1.Dados Pessoais</h1>
+                <div style="display: flex; justify-content: center; padding: 10px; border-bottom: 2px solid black;">
+                    <img src="assets/Logo.png" style="width: 100%; max-width: 105px; border: 2px solid black; border-radius: 20%;" alt="">
+                </div>
                 <section style="display: flex; flex-direction: column; gap: 30px; padding-top: 30px;">
                     <section class="SectionFlexMain" style="display: flex; flex-direction: column; flex: 4; gap: 30px;">
                         <section>   
-                                <label for=""> Nome completo: </label><input type="text" maxlength="300" required> 
+                                <label for=""> Nome completo: </label><input type="text" id="nome" maxlength="300" required> 
                         </section>
                         <section>   
-                                <label for=""> Data de nascimento: </label><input type="date" required> 
+                                <label for=""> Data de nascimento: </label><input type="date" id="date" required> 
                         </section>
                         <section>
                                 <label for="" > Sexo: </label>
-                                <select required>
+                                <select required id="sexo">
                                     <option value=""></option>
-                                    <option value="">Homem</option>
-                                    <option value="">Mulher</option>
+                                    <option value="homem">Homem</option>
+                                    <option value="mulher">Mulher</option>
                                 </select>
                         </section>
                     </section>        
                         <section style="padding: px;">
-                            <label for="">CPF: </label><input type="text" pattern="[0-9]{11}" maxlength="11"  placeholder="Ex: 12345678956" required>
+                            <label for="">CPF: </label><input id="cpf" type="text" pattern="[0-9]{11}" maxlength="11"  placeholder="Ex: 12345678956" required>
                         </section>
                         <section >
-                            <label for="">RG: </label><input type="text" maxlength="11" pattern="[0-9]{11}" placeholder="Ex: 12345678956" required>
+                            <label for="">RG: </label><input id="rg" type="text" maxlength="11" pattern="[0-9]{11}" placeholder="Ex: 12345678956" required>
                         </section>
                         <section>
                             <label for=""> Estado civil </label>
-                            <select name="" id="" required>
+                            <select name="" id="civil" required>
                                 <option value=""></option>
-                                <option value="">solteiro</option>
-                                <option value="">casado</option>
-                                <option value="">separado</option>
-                                <option value="">divorciado </option>                                
-                                <option value="">viúvo</option>    
+                                <option value="solteiro">solteiro</option>
+                                <option value="casado">casado</option>
+                                <option value="separado">separado</option>
+                                <option value="divorciado">divorciado </option>                                
+                                <option value="viúvo">viúvo</option>    
                             </select>
                         </section>             
                     <section class="buttonPro">
-                        <button type="submit" id="saveButton" style="cursor: pointer; text-decoration: none; color: black;  font-size: 1.5rem; padding: 5px; border: 2px solid black; background-color: #005F56; border-radius: 12px;">Salvar</button>
-                        <a href="contato2.html" id="buttonPro" style="cursor: pointer; text-decoration: none; color: black;  font-size: 1.5rem; padding: 5px; border: 2px solid black; background-color: #005F56; border-radius: 12px;">Prosseguir</a>
+
+                        <button type="button" onclick="salvarCadastro()" id="buttonPro" style="cursor: pointer; text-decoration: none; color: black;  font-size: 1.5rem; padding: 5px; border: 2px solid black; background-color: #005F56; border-radius: 12px;">Salvar
+                        </button>
+                        
+                        <button type="button" class="meuBotao" onclick="validarCadastro()" id="buttonPro" style="cursor: pointer;  color: black;  font-size: 1.5rem; padding: 5px; border: 2px solid black; background-color: #005F56; border-radius: 12px;">Prosseguir
+                        </button>
+
                     </section>
                 </section>
             </form>

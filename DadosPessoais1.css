@@ -161,3 +161,10 @@ body {
     background-color: #7afff2c0 !important;
 }
 
+.blockButton {
+    pointer-events: none;      /* O link não aceita cliques */
+    opacity: 0.5;              /* Fica meio transparente */
+    background-color: gray !important; /* Fica cinza */
+    cursor: not-allowed !important;
+}
+

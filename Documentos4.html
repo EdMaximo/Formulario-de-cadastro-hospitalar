@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Documentos4.css">
+    <script defer src="script/script.js"></script>
     <title>Documentos</title>
 </head>
 <body>
@@ -22,7 +23,7 @@
               </a>
             </li>
             <li>
-              <a href="InformaçõesMédicas3.html" id="Back" style="text-decoration: none; color: whitesmoke;">
+              <a href="InformacoesMédicas3.html" id="Back" style="text-decoration: none; color: whitesmoke;">
               <img src="assets/arrow_back_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" id="imgback" alt="" style="color: white;">
               </a> 
             </li>
@@ -33,10 +34,12 @@
       <section style="padding-bottom: 30px;">
       </section>
       <div class="container" style="display: flex; flex-direction: column;">
-        <h1 id="title">Cadastro</h1>
+        <h1 id="title">Cadastro de Pacientes</h1>
         <form action="" class="containerForm" style="border: 2px solid black; padding: 10px;">
-                <h1 style="display: flex; cursor: default; font-size: 27px; justify-content: center; align-items: center; padding-top: 0px; padding-bottom: 25px; border-bottom: 2px solid black; ">4.Documentos</h1>
-
+                <h1 style="display: flex; cursor: default; font-size: 27px; justify-content: center; align-items: center; padding-top: 0px;">4. Documentos</h1>
+                <div style="display: flex; justify-content: center; padding: 10px; border-bottom: 2px solid black;">
+                    <img src="assets/Logo.png" style="width: 100%; max-width: 105px; border: 2px solid black; border-radius: 20%;" alt="">
+                </div>
                 <section style="display: flex; flex-direction: column; gap: 30px; padding-top: 30px;">
                   <section class="SectionFlexMain" style="display: flex; flex-direction: column; text-align: center; flex-wrap: wrap; flex: 4; "><label for=""> 
                           Arreste os arquivos desejados aqui!
@@ -44,8 +47,10 @@
                         </label>
                       </section>
                     <section class="buttonPro">
-                        <button type="submit" id="saveButton" style="cursor: pointer; text-decoration: none; color: black;  font-size: 1.5rem; padding: 5px; border: 2px solid black; background-color: #005F56; border-radius: 12px;">Salvar</button>
-                        <a href="cadastroEnd5.html" id="buttonPro" style="cursor: pointer; text-decoration: none; color: black;  font-size: 1.5rem; padding: 5px; border: 2px solid black; background-color: #005F56; border-radius: 12px;">Prosseguir</a>
+                        <button type="button" onclick="salvarCadastroDocuments()" id="buttonPro" style="cursor: pointer; text-decoration: none; color: black;  font-size: 1.5rem; padding: 5px; border: 2px solid black; background-color: #005F56; border-radius: 12px;" class="meuBotao">Salvar
+                        </button>
+
+                        <button type="button" class="meuBotao" onclick="validarCadastroDocuments()" id="buttonPro" style="cursor: pointer;  color: black;  font-size: 1.5rem; padding: 5px; border: 2px solid black; background-color: #005F56; border-radius: 12px;">Prosseguir</button>
                     </section>
             </form>
         </div>

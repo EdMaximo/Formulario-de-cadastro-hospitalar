@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="InformacoesMedicas3.css">
+    <script defer src="script/script.js"></script>
     <title>InformaçõesMédicas</title>
 </head>
 <body>
@@ -31,27 +32,30 @@
     </nav>
     <div style=" display: flex; flex-direction: column; box-sizing: border-box; margin: 0 auto; justify-content: center; align-items: center;">
         <div class="container" style="display: flex; flex-direction: column;" >
-            <h1 id="title">Cadastro</h1>
+            <h1 id="title">Cadastro de Pacientes</h1>
             <form action="" class="containerForm" style="border: 2px solid black; padding: 10px;">
-                <h1 style="display: flex; cursor: default; font-size: 1.5rem; justify-content: center; align-items: center; padding-top: 0px; padding-bottom: 25px; border-bottom: 2px solid black; ">3.Informações Médicas</h1>
+                <h1 style="display: flex; cursor: default; font-size: 27px; justify-content: center; align-items: center; padding-top: 0px;">3. Informações Médicas</h1>
+                <div style="display: flex; justify-content: center; padding: 10px; border-bottom: 2px solid black;">
+                    <img src="assets/Logo.png" style="width: 100%; max-width: 105px; border: 2px solid black; border-radius: 20%;" alt="">
+                </div>
                 <section style="display: flex; flex-direction: column; gap: 30px; padding-top: 30px;">
                     <section class="SectionFlexMain" style="display: flex; flex-direction: column; flex: 4; gap: 30px;">
                         <section>   
                                 <label for="">Número do cartão SUS (opcional): </label><input type="text" pattern="[0-9]{15}" maxlength="15"> 
                         </section>
                         <section>
-                                <label for=""> Convênio médico: </label><select required>
+                                <label for=""> Convênio médico: </label><select required id="Convenio">
                                     <option value=""></option>
-                                    <option value="">Plano de saúde de atendimento ambulatorial.</option>
-                                    <option value="">Plano de saúde hospitalar: sem cobertura obstétrica.</option>
-                                    <option value="">Plano de saúde hospitalar:  com cobertura obstétrica.</option>
-                                    <option value="">Plano de saúde odontológico.</option>
-                                    <option value="">Plano de saúde referência.</option>
+                                    <option value="ambulatorial">Plano de saúde de atendimento ambulatorial.</option>
+                                    <option value="semObstétrica">Plano de saúde hospitalar: sem cobertura obstétrica.</option>
+                                    <option value="comObstétrica">Plano de saúde hospitalar:  com cobertura obstétrica.</option>
+                                    <option value="odontológico">Plano de saúde odontológico.</option>
+                                    <option value="referência">Plano de saúde referência.</option>
                                 </select>
                         </section>
                     </section>        
                         <section style="padding: px;">
-                            <label for="">Número da carteirinha do convênio: </label><input type="text"  id="convenio" name="convenio"     pattern="[0-9]{25}" maxlength="25" placeholder="0000000000000000000000000" title="O número deve conter exatamente 25 dígitos."  required>
+                            <label for="">Número da carteirinha do convênio: </label><input type="text"  id="Nmrconvenio" name="convenio"     pattern="[0-9]{25}" maxlength="25" placeholder="0000000000000000000000000" title="O número deve conter exatamente 25 dígitos."  required>
                         </section>
                         <section style="display: flex; border-top: 2px solid black; border-bottom: 2px solid black; gap: 20px; flex-wrap: wrap;">
                             <section style="padding-bottom: 16px; display: flex; flex: 2; flex-direction: column; width: 45%;">
@@ -60,17 +64,19 @@
                             </section>
                             <div style="border-left: 2px solid black; padding-left: 21px; padding-bottom: 16px; display: flex; flex: 2; flex-direction: column; width: 45%;">       
                                 <label for="" style="padding-bottom: 5px;">Médico responsável</label>
-                                <select size="4" required>
-                                    <option value="">Dr. Guts</option>
-                                    <option value="">Dr. Bruce Willis</option>
-                                    <option value="">Dr. Marty McFly</option>
-                                    <option value="">Dr. Dante</option>
+                                <select size="4" required id="DocName">
+                                    <option value="Guts">Dr. Guts</option>
+                                    <option value="Bruce">Dr. Bruce Willis</option>
+                                    <option value="Marty">Dr. Marty McFly</option>
+                                    <option value="Dante">Dr. Dante</option>
                                 </select>
                             </div>
                         </section>
                     <section class="buttonPro">
-                        <button type="submit" id="saveButton" style="cursor: pointer; text-decoration: none; color: black;  font-size: 1.5rem; padding: 5px; border: 2px solid black; background-color: #005F56; border-radius: 12px;">Salvar</button>
-                        <a href="Documentos4.html" id="buttonPro" style="cursor: pointer; text-decoration: none; color: black;  font-size: 1.5rem; padding: 5px; border: 2px solid black; background-color: #005F56; border-radius: 12px;">Prosseguir</a>
+                        <button type="button" onclick="salvarCadastroInfoMed()" id="buttonPro" style="cursor: pointer; text-decoration: none; color: black;  font-size: 1.5rem; padding: 5px; border: 2px solid black; background-color: #005F56; border-radius: 12px;" class="meuBotao">Salvar
+                        </button>
+
+                        <button type="button" class="meuBotao" onclick="validarCadastroInfoMed()" id="buttonPro" style="cursor: pointer;  color: black;  font-size: 1.5rem; padding: 5px; border: 2px solid black; background-color: #005F56; border-radius: 12px;">Prosseguir</button>
                     </section>
                 </section>
             </form>
